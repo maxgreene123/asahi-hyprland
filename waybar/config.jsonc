@@ -38,8 +38,15 @@
         "format": "[{temperatureC}°C]"
     },
     "battery": {
-        "format": "[BAT:{capacity}%]"
+        "adapter": "AC",
+        "format": "[BAT:{capacity}%]",
+        "format-charging": "[CHARGING:{capacity}%]",
+        "format-discharging": "[BAT:{capacity}%]",
+        "format-plugged": "[PLUGGED:{capacity}%]",
+        "format-full": "[FULL:{capacity}%]",
+        "interval": 10
     },
+    
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "[VOL:{volume}%]",
