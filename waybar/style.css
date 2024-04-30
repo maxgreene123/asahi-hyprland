@@ -56,7 +56,7 @@ window#waybar {
 #battery,
 #clock,
 #tray,
-#brightness,
+#backlight,
 #custom-icon {
   background-color: transparent;
   color: @text;
