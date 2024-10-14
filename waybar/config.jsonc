@@ -1,62 +1,76 @@
 {
-    "spacing": 4,
-    // try to keep it 4px across the config
-    "height": 25,
-    "modules-left": ["hyprland/workspaces", "custom/icon", "hyprland/window"],
-    "modules-right": ["pulseaudio", "backlight", "cpu", "memory", "battery", "temperature", "clock", "tray"],
+  "spacing": 4,
+  // try to keep it 4px across the config
+  "height": 25,
+  "modules-left": ["hyprland/workspaces", "custom/icon", "hyprland/window"],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "cpu",
+    "memory",
+    "battery",
+    "temperature",
+    "clock",
+    "custom/hyprlock",
+    "tray",
+  ],
 
- 
-    /*
+  /*
     MODULES
     */
-    "custom/icon": {
-        "exec": "~/.config/waybar/state",
-        "interval": "once",
-        "signal": 8
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>[{:%Y %B}]</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "[{:%H:%M}]",
-        "format-alt": "[{:%Y-%m-%d}]"
-    },
-    "cpu": {
-        "format": "[CPU:{usage}%]",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "[MEM:{percentage}%]"
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        "format-critical": "[!!{temperatureC}°C!!]",
-        "format": "[{temperatureC}°C]"
-    },
-    "battery": {
-        "adapter": "AC",
-        "format": "[BAT:{capacity}%]",
-        "format-charging": "[CHARGING:{capacity}%]",
-        "format-discharging": "[BAT:{capacity}%]",
-        "format-plugged": "[PLUGGED:{capacity}%]",
-        "format-full": "[FULL:{capacity}%]",
-        "interval": 10
-    },
-    
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "[VOL:{volume}%]",
-        "format-muted": "[VOL: M]",
-        "on-click": "pavucontrol"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "[LIGHT:{percent}%]",
-        "format-icons": ["", ""]
-    }
-    
+  "custom/icon": {
+    "exec": "~/.config/waybar/state",
+    "interval": "once",
+    "signal": 8,
+  },
+  "tray": {
+    "spacing": 10,
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>[{:%Y %B}]</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "[{:%H:%M}]",
+    "format-alt": "[{:%Y-%m-%d}]",
+  },
+  "cpu": {
+    "format": "[CPU:{usage}%]",
+    "tooltip": false,
+  },
+  "memory": {
+    "format": "[MEM:{percentage}%]",
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "[!!{temperatureC}°C!!]",
+    "format": "[{temperatureC}°C]",
+  },
+  "battery": {
+    "adapter": "AC",
+    "format": "[BAT:{capacity}%]",
+    "format-charging": "[CHARGING:{capacity}%]",
+    "format-discharging": "[BAT:{capacity}%]",
+    "format-plugged": "[PLUGGED:{capacity}%]",
+    "format-full": "[FULL:{capacity}%]",
+    "interval": 10,
+  },
+
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "[VOL:{volume}%]",
+    "format-muted": "[VOL: M]",
+    "on-click": "pavucontrol",
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "[LIGHT:{percent}%]",
+    "format-icons": ["", ""],
+  },
+  "custom/hyprlock": {
+    "exec": "echo '[LOCK]'",
+    "return-type": "text",
+    "on-click": "hyprlock",
+    "interval": "once",
+  },
 }
